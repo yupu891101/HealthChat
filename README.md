@@ -4,6 +4,8 @@ The recommended version of python is 3.8 to avoid gradio error messages.
 
 ```bash
 git clone https://github.com/yupu891101/HealthChat.git
+cd HealthChat
+pip install -r requirements.txt
 ```
 
 ### Finetuned Taiwan-LLM-13B
