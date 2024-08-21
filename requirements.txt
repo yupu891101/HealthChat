@@ -19,8 +19,8 @@ ffmpy==0.4.0
 fonttools==4.53.1
 fsspec==2024.6.1
 funcy==2.0
-gradio==4.33.0
-gradio_client==0.17.0
+gradio==4.26.0
+gradio_client==0.15.1
 h11==0.14.0
 httpcore==1.0.5
 httpx==0.27.0
@@ -39,7 +39,7 @@ matplotlib==3.7.5
 mdurl==0.1.2
 mkl-service==2.4.0
 more-itertools==10.4.0
-narwhals==1.5.0
+narwhals==1.5.2
 nltk==3.9.1
 numba==0.58.1
 openai-whisper @ git+https://github.com/openai/whisper.git@ba3f3cd54b0e5b8ce1ab3de13e32122d0d5f98ab
@@ -86,7 +86,7 @@ transformers @ git+https://github.com/huggingface/transformers.git@87134662f73d5
 triton==2.3.1
 typer==0.12.4
 tzdata==2024.1
-urllib3==2.2.2
+urllib3==1.26.19
 uvicorn==0.30.6
 websockets==11.0.3
 zipp==3.20.0

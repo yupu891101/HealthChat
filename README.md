@@ -37,6 +37,7 @@ The recommended version of python is 3.8 to avoid gradio error messages.
     cd ../
     git clone https://github.com/yxlllc/DDSP-SVC.git
     cd DDSP-SVC
+    pip install pip==24.0
     pip install -r requirements.txt
     ```
 
@@ -89,6 +90,3 @@ To run the project, simply execute the following command in the terminal:
 ```bash
 python launch.py
 ```
-conda remove --name new --all
-conda create --name v38 python=3.10
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
