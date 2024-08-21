@@ -1,6 +1,6 @@
 # HealthChat
 
-The recommended version of python is 3.8 to avoid gradio error messages.
+This project has been tested with Python version 3.10.
 
 ## Installation
 
@@ -37,9 +37,10 @@ The recommended version of python is 3.8 to avoid gradio error messages.
     cd ../
     git clone https://github.com/yxlllc/DDSP-SVC.git
     cd DDSP-SVC
-    pip install pip==24.0
+    pip install pip==24.0  # Ensure pip is downgraded to avoid compatibility issues
     pip install -r requirements.txt
     ```
+    Note: Some packages listed in requirements.txt require pip version <24.1. Therefore, it's necessary to first downgrade pip to version 24.0 before installing the dependencies.
 
 5. **Download Pre-trained DDSP-SVC Model Weights:**
 
