@@ -44,7 +44,7 @@ class Tab2():
         expdir_path = os.path.join('./DDSP-SVC/exp', dir_path)
         os.makedirs(expdir_path, exist_ok=True)
 
-        model_0_path = './DDSP-SVC/model_0.pt'
+        model_0_path = './DDSP-SVC/exp/model_0.pt'
         shutil.copy(model_0_path, os.path.join(expdir_path, 'model_0.pt'))
 
     def learn_voice(self, input_wav, dir_path, epoch):
@@ -60,7 +60,7 @@ class Tab2():
             gr.Warning(warning_msg)
         
         self.move_audio(input_wav)
-        self.update_yaml_env(dir_path,epoch)
+        self.update_yaml_env(dir_path, epoch)
         draw = f"python draw.py"
         preprocess = f"python preprocess.py -c configs/diffusion-fast.yaml"
         train = f"python train_diff.py -c configs/diffusion-fast.yaml"
@@ -91,8 +91,7 @@ class Tab2():
                 process.wait()
 
             if all(p.poll() == 0 for p in processes):
-                result = "Draw and Preprocess has been done successfully!"
-                print(result)
+                print("Draw and Preprocess has been done successfully!")
 
             train_process = subprocess.Popen(train, shell=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=r"./DDSP-SVC")
 
@@ -107,17 +106,17 @@ class Tab2():
                 print(f"Error during training: {e}")
 
             finally:
-                train_process.terminate()
-                train_process.wait()
+                return_code = train_process.wait()
 
-                return_code = train_process.returncode
                 if return_code == 0:
-                    res = "Your voice has been learned successfully! Please go to \"Choose Voice\" and refresh the page to use the voice you learned."
+                    res = "Your voice has been learned successfully! Please go to \"Tell Story with Different Voices\" to use the voice you learned."
                     print(res)
                     return res
                 else:
+                    error_output = train_process.stderr.read().strip()
                     print(f"Train process exited with code: {return_code}")
-            
+                    print(f"Error output: {error_output}")
+
         except Exception as e:
             outputs.append(f"Error: {e}")
 
