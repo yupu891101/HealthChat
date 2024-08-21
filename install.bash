@@ -4,7 +4,7 @@ pip install OpenCC
 pip install soundfile
 pip install langid
 pip install nltk
-pip install gradio==4.33.0
+pip install gradio==4.26.0
 pip install git+https://github.com/openai/whisper.git 
 pip install ruamel.yaml
 pip install 'accelerate>=0.26.0'

@@ -16,7 +16,7 @@ The recommended version of python is 3.8 to avoid gradio error messages.
 2. **Clone the Ollama Repository:**
 
     Clone the Ollama repository to obtain the necessary code and resources:
-    
+
     ```bash
     git clone https://github.com/ollama/ollama.git
     ```
@@ -89,3 +89,6 @@ To run the project, simply execute the following command in the terminal:
 ```bash
 python launch.py
 ```
+conda remove --name new --all
+conda create --name v38 python=3.10
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia

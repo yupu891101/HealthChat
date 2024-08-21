@@ -6,6 +6,8 @@ import shutil
 import time
 import os
 
+os.environ["MKL_SERVICE_FORCE_INTEL"] = "1"
+
 stop_training_signal = threading.Event()
 
 class Tab2():
